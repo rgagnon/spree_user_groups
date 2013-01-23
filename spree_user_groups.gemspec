@@ -20,4 +20,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'spree_core', '~> 1.3.0'
   s.add_dependency 'spree_auth_devise', '~> 1.0'
+  s.add_development_dependency 'factory_girl'
+  s.add_development_dependency 'rspec-rails',  '~> 2.7'
+  s.add_development_dependency 'shoulda-matchers', '~> 1.4.2'
+  s.add_development_dependency 'sqlite3'
 end
