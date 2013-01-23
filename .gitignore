@@ -7,4 +7,6 @@
 tmp
 nbproject
 *.swp
-spec/test_app
+spec/dummy
+.bundle
+vendor/bundle
