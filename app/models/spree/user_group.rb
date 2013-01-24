@@ -3,7 +3,7 @@ module Spree
     has_many :users, :dependent => :nullify
     validates :name, :presence => true
 
-    attr_accessible :name
+    attr_accessible :name, :calculator
 
     calculated_adjustments
 

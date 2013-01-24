@@ -8,7 +8,9 @@ describe Spree::UserGroup do
   end
 
   describe "#save" do
-    let(:user_group_valid) { Spree::UserGroup.new :name => "Wholesaler" }
+    let(:calculator) { Spree::Calculator::AdvancedFlatPercent.new }
+    let(:user_group_valid) { Spree::UserGroup.new(:name => "Wholesaler",
+       :calculator => calculator) }
 
     context "when is invalid" do
       it { user_group.save.should be_false }
