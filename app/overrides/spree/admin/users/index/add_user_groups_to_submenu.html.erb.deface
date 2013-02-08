@@ -1,0 +1,2 @@
+<!-- insert_before 'table#listing_users' -->
+<%= render :partial => 'spree/admin/users/submenu' %>
