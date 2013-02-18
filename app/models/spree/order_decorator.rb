@@ -33,8 +33,8 @@ module Spree
 
     # Associates the specified user with the order.
     def associate_user!(user)
-      self.user = user
-      self.email = user.email
+      self.customer = user.customer
+      self.email = user.customer.email
       # disable validations since they can cause issues when associating
       # an incomplete address during the address step
       save(:validate => false)
@@ -43,11 +43,11 @@ module Spree
     end
 
     def update_prices_per_user
-      return unless self.user.present?
+      return unless self.customer.present?
 
       changes = false
       self.line_items.each do |line_item|
-        user_price = line_item.variant.price_for_user(self.user)
+        user_price = line_item.variant.price_for_user(self.customer.user)
         if user_price != line_item.price
           line_item.price = user_price
           line_item.save
