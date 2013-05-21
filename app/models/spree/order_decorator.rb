@@ -33,8 +33,8 @@ module Spree
 
     # Associates the specified user with the order.
     def associate_user!(user)
-      self.user = user.user
-      self.email = user.user.email
+      self.user = user
+      self.email = user.email
       # disable validations since they can cause issues when associating
       # an incomplete address during the address step
       save(:validate => false)
